@@ -14,11 +14,19 @@ body {
 	box-shadow: 2px 5px 5px #888888;
 	border: 0px;
 }
+.container:nth-child(2):hover {
+	background-color: red;
+	box-shadow: 2px 5px 5px #888888;
+	border: 0px;
+}
+.container:nth-child(2):hover ~ .container{
+	background-color: #f26666;
+}
 
 .container:hover ~ .container{
 	background-color: #ADD8E6;
 }
- #heart {
+#heart:hover .container{
 	background-color: red;
 }
 
