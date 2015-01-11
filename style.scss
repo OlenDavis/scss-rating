@@ -10,13 +10,15 @@ body {
 	float: right;
 }
 .container:hover {
-	background-color: red;
+	background-color: #1fb8ea;
 	box-shadow: 2px 5px 5px #888888;
 	border: 0px;
 }
+
 .container:hover ~ .container{
-	background-color: blue;
+	background-color: #ADD8E6;
 }
+
 .container:hover #heart:before {
 	background-color: white;
 }
