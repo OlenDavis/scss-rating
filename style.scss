@@ -18,10 +18,14 @@ body {
 .container:hover ~ .container{
 	background-color: #ADD8E6;
 }
+ #heart {
+	background-color: red;
+}
 
 .container:hover #heart:before {
 	background-color: white;
 }
+
 .container:hover #heart:after {
 	background-color: white;
 }
