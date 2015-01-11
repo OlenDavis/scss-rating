@@ -4,7 +4,7 @@ body {
 .container {
 	height: 180px;
 	width: 200px;
-	background-color: black;
+	border: 1px solid #e9e9e9;
 	border-radius: 20px;
 	&:hover {
 		background-color: purple;
@@ -12,6 +12,8 @@ body {
 }
 .container:hover {
 	background-color: red;
+	box-shadow: 2px 5px 5px #888888;
+	border: 0px;
 }
 
 .container:hover #heart:before {
