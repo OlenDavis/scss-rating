@@ -15,9 +15,8 @@
   background-color: red;
   box-shadow: 2px 5px 5px #888888;
   border: 0px; }
-
-.container:nth-child(2):hover ~ .container {
-  background-color: #f26666; }
+  .container:nth-child(2):hover ~ .container {
+    background-color: #f26666; }
 
 .container:hover ~ .container {
   background-color: #ADD8E6; }
@@ -25,19 +24,12 @@
 #heart:hover .container {
   background-color: red; }
 
-.container:hover #heart:before {
-  background-color: white; }
-
-.container:hover #heart:after {
+.container:hover #heart:before, .container:hover #heart:after {
   background-color: white; }
 
 .container:hover #star:before {
   border-bottom: 90px solid white; }
-
-.container:hover #star:after {
-  border-bottom: 50px solid white; }
-
-.container:hover #star {
+.container:hover #star:after, .container:hover #star {
   border-bottom: 50px solid white; }
 
 #star {

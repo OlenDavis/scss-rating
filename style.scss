@@ -17,11 +17,13 @@
 	background-color: red;
 	box-shadow: 2px 5px 5px #888888;
 	border: 0px;
-}
-.container:nth-child(2):hover ~ .container{
-	background-color: #f26666;
+	// Adds light red background to container
+	& ~ .container{
+		background-color: #f26666;
+	}
 }
 
+// Adds light blue background to container
 .container:hover ~ .container{
 	background-color: #ADD8E6;
 }
@@ -30,22 +32,21 @@
 	background-color: red;
 }
 
-.container:hover #heart:before {
-	background-color: white;
+.container:hover {
+	& #heart:before, #heart:after {
+		background-color: white;
+	}
 }
 
-.container:hover #heart:after {
-	background-color: white;
+.container:hover {
+	& #star:before{
+		border-bottom: 90px solid white;
+	}
+	& #star:after, #star{
+		border-bottom: 50px solid white;
+	}
 }
-.container:hover #star:before{
-	border-bottom: 90px solid white;
-}
-.container:hover #star:after{
-	border-bottom: 50px solid white;
-}
-.container:hover #star{
-	border-bottom: 50px solid white;
-}
+
 
 @mixin transform($transform) {
 	-webkit-transform: $transform;
