@@ -1,14 +1,5 @@
 module.exports = (grunt) ->
 	grunt.initConfig
-	    sass: 
-	    	dist:
-	    		files:
-	    			"style.css" : "style.scss"
-
-		watch:
-			css:
-				files: '*.scss',
-				tasks: ['sass']
 
 		coffee:
 			compile:
