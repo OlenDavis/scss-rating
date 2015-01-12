@@ -107,9 +107,9 @@
     position: absolute;
     content: "";
     left: 90px;
-    top: 2em;
-    width: 5em;
-    height: 8em;
+    top: 31px;
+    width: 80px;
+    height: 130px;
     background: #e9e9e9;
     border-radius: 50px 50px 0 0;
     -webkit-transform: rotate(-45deg);
