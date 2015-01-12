@@ -1,4 +1,4 @@
-.container, .active, .active:first-child, .container:first-child:hover {
+.container, .active, .active:first-child, .canHover .container:first-child:hover {
   height: 180px;
   width: 180px;
   border: 1px solid #e9e9e9;
@@ -6,14 +6,14 @@
   display: inline-block;
   float: right;
   margin: 5px; }
-  .container:hover, .active:hover, .container:hover:first-child {
+  .container:hover, .active:hover, .canHover .container:hover:first-child {
     background-color: #1fb8ea;
     box-shadow: 2px 5px 5px #888888;
     border: 0px; }
 
 .active {
   background-color: #1fb8ea; }
-  .active ~ .container, .active ~ .active, .active ~ .container:first-child:hover {
+  .active ~ .container, .active ~ .active, .canHover .active ~ .container:first-child:hover {
     background-color: #1fb8ea; }
   .active .star:before {
     border-bottom: 90px solid white; }
@@ -22,28 +22,28 @@
   .active #heart:before, .active #heart:after {
     background-color: white; }
 
-.active:first-child, .container:first-child:hover, .active:first-child:hover {
+.active:first-child, .canHover .active:first-child:hover, .canHover .container:first-child:hover {
   background-color: red;
   box-shadow: 2px 5px 5px #888888;
   border: 0px; }
-  .active:first-child ~ .container, .active:first-child ~ .active, .container:first-child:hover ~ .container, .active:first-child:hover ~ .container, .container:first-child:hover ~ .active, .active:first-child:hover ~ .active {
+  .active:first-child ~ .container, .active:first-child ~ .active, .canHover .active:first-child ~ .container:first-child:hover, .canHover .active:first-child:hover ~ .container, .canHover .container:first-child:hover ~ .container, .canHover .active:first-child:hover ~ .active, .canHover .container:first-child:hover ~ .active {
     background-color: #f26666; }
 
-.container:hover ~ .container, .active:hover ~ .container, .container:hover ~ .active, .active:hover ~ .active {
+.canHover .container:hover ~ .container, .canHover .active:hover ~ .container, .canHover .container:hover ~ .active, .canHover .active:hover ~ .active {
   background-color: #ADD8E6; }
-  .container:hover ~ .container .star:before, .active:hover ~ .container .star:before, .container:hover ~ .active .star:before, .active:hover ~ .active .star:before {
+  .canHover .container:hover ~ .container .star:before, .canHover .active:hover ~ .container .star:before, .canHover .container:hover ~ .active .star:before, .canHover .active:hover ~ .active .star:before {
     border-bottom: 90px solid white; }
-  .container:hover ~ .container .star:after, .active:hover ~ .container .star:after, .container:hover ~ .active .star:after, .active:hover ~ .active .star:after, .container:hover ~ .container .star, .active:hover ~ .container .star, .container:hover ~ .active .star, .active:hover ~ .active .star {
+  .canHover .container:hover ~ .container .star:after, .canHover .active:hover ~ .container .star:after, .canHover .container:hover ~ .active .star:after, .canHover .active:hover ~ .active .star:after, .canHover .container:hover ~ .container .star, .canHover .active:hover ~ .container .star, .canHover .container:hover ~ .active .star, .canHover .active:hover ~ .active .star {
     border-bottom: 50px solid white; }
 
-#heart:hover .container, #heart:hover .active {
+.canHover #heart:hover .container, .canHover #heart:hover .active {
   background-color: red; }
 
-.container:hover #heart:before, .active:hover #heart:before, .container:hover #heart:after, .active:hover #heart:after {
+.canHover .container:hover #heart:before, .canHover .active:hover #heart:before, .canHover .container:hover #heart:after, .canHover .active:hover #heart:after {
   background-color: white; }
-.container:hover .star:before, .active:hover .star:before {
+.canHover .container:hover .star:before, .canHover .active:hover .star:before {
   border-bottom: 90px solid white; }
-.container:hover .star:after, .active:hover .star:after, .container:hover .star, .active:hover .star {
+.canHover .container:hover .star:after, .canHover .active:hover .star:after, .canHover .container:hover .star, .canHover .active:hover .star {
   border-bottom: 50px solid white; }
 
 .star {
