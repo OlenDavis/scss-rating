@@ -19,6 +19,8 @@
     border-bottom: 90px solid white; }
   .active .star:after, .active .star {
     border-bottom: 50px solid white; }
+  .active #heart:before, .active #heart:after {
+    background-color: white; }
 
 .active:first-child {
   background-color: red;

@@ -29,6 +29,9 @@ $gray: #e9e9e9;
 	& .star:after, .star {
 		border-bottom: 50px solid white
 	}
+	& #heart:before, #heart:after {
+		background-color: white;
+	}
 }
 
 .active:first-child {

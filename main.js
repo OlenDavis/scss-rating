@@ -1,25 +1,20 @@
-(function() {
-  var addActive, i, option;
+var option = document.getElementsByClassName("container");
 
-  addActive = function(elem) {
-    console.log(option[elem]);
-    option[elem].classList.add("active");
-    if (option[elem + 1] !== undefined) {
-      addActive(elem + 1);
-    }
-  };
+function addActive(elem){
+	console.log(option[elem]);
+	option[elem].classList.add("active");
+	//Recursion to add active class to all containers
+	if (option[elem+1] !== undefined){
+		addActive(elem+1);
+	}
+}
 
-  option = document.getElementsByClassName("container");
+for (var i = 0; i < option.length; i++){
+	//Closure to track index of container
+	(function(index){
+		option[index].addEventListener("click", function(){
+			addActive(index);
+		});
+	})(i);
 
-  i = 0;
-
-  while (i < option.length) {
-    (function(index) {
-      option[index].addEventListener("click", function() {
-        addActive(index);
-      });
-    })(i);
-    i++;
-  }
-
-}).call(this);
+}
