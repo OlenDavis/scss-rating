@@ -6,7 +6,7 @@
   float: right;
   margin: 5px; }
 
-@media (max-width: 500px) {
+@media (max-width: 1170px) {
   .container, .active, .active:first-child, .canHover .container:first-child:hover {
     clear: both; } }
 .canHover .container:hover, .canHover .active:hover, .canHover .container:hover:first-child {

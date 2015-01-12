@@ -13,7 +13,7 @@ $shadow: #888888;
 	margin: 5px;
 }
 //Take out float for smaller window
-@media (max-width: 500px){
+@media (max-width: 1170px){
 	.container {
 		clear:both;
 	}
