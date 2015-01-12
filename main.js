@@ -1,35 +1,25 @@
-// (function() {
-//   var array, option;
+(function() {
+  var addActive, i, option;
 
-//   array = [1, 2, 3, 4];
+  addActive = function(elem) {
+    console.log(option[elem]);
+    option[elem].classList.add("active");
+    if (option[elem + 1] !== undefined) {
+      addActive(elem + 1);
+    }
+  };
 
-//   option = document.getElementsByClassName("container");
+  option = document.getElementsByClassName("container");
 
-// }).call(this);
+  i = 0;
 
+  while (i < option.length) {
+    (function(index) {
+      option[index].addEventListener("click", function() {
+        addActive(index);
+      });
+    })(i);
+    i++;
+  }
 
-var option = document.getElementsByClassName("container");
-var heart = document.getElementById('heart');
-
-function addActive(elem){
-	console.log(option[elem]);
-	option[elem].classList.add("active");
-	//Recursion to add active class to all containers
-	if (option[elem+1] !== undefined){
-		addActive(elem+1);
-	}
-}
-
-for (var i = 0; i < option.length; i++){
-	//Closure to track index of container
-	(function(index){
-		option[index].addEventListener("click", function(){
-			addActive(index);
-		});
-	})(i);
-	option[i].addEventListener("click", function(){
-		// console.log(this);
-		this.classList.add("active");
-	});
-
-}
+}).call(this);
