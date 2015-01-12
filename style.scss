@@ -26,6 +26,12 @@
 // Adds light blue background to container
 .container:hover ~ .container{
 	background-color: #ADD8E6;
+	& #star:before {
+		border-bottom: 90px solid white
+	}
+	& #star:after, #star {
+		border-bottom: 50px solid white
+	}
 }
 
 #heart:hover .container{

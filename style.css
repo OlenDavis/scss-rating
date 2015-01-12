@@ -20,6 +20,10 @@
 
 .container:hover ~ .container {
   background-color: #ADD8E6; }
+  .container:hover ~ .container #star:before {
+    border-bottom: 90px solid white; }
+  .container:hover ~ .container #star:after, .container:hover ~ .container #star {
+    border-bottom: 50px solid white; }
 
 #heart:hover .container {
   background-color: red; }
