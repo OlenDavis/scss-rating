@@ -1,25 +1,30 @@
-var option = document.getElementsByClassName("container");
-var canHover = document.getElementsByClassName("canHover")[0];
+(function() {
+  var addActive, canHover, i, option;
 
-function addActive(elem){
-	option[elem].classList.add("active");
-	//Remove canHover class to disable hover
-	canHover.className="";
-	//Recursion to add active class to all containers
-	if (option[elem+1] !== undefined){
-		addActive(elem+1);
-	}
-	noClick = false;
-	//In order to not make another rating selection, change function of addActive
-	addActive = function(){
-		return;
-	};
-}
-for (var i = 0; i < option.length; i++){
-	//Closure to track index of container
-		(function(index){
-				option[index].addEventListener("click", function(){
-					addActive(index);
-				});
-		})(i);
-}
+  addActive = function(elem) {
+    var noClick;
+    option[elem].classList.add("active");
+    canHover.className = "";
+    if (option[elem + 1] !== undefined) {
+      addActive(elem + 1);
+    }
+    noClick = false;
+    addActive = function() {};
+  };
+
+  option = document.getElementsByClassName("container");
+
+  canHover = document.getElementsByClassName("canHover")[0];
+
+  i = 0;
+
+  while (i < option.length) {
+    (function(index) {
+      option[index].addEventListener("click", function() {
+        addActive(index);
+      });
+    })(i);
+    i++;
+  }
+
+}).call(this);
