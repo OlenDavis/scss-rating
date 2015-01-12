@@ -11,6 +11,18 @@
     box-shadow: 2px 5px 5px #888888;
     border: 0px; }
 
+.active, .active:hover {
+  background-color: #1fb8ea; }
+  .active ~ .container, .active:hover ~ .container {
+    background-color: #1fb8ea; }
+
+.active:nth-child(2) {
+  background-color: red;
+  box-shadow: 2px 5px 5px #888888;
+  border: 0px; }
+  .active:nth-child(2) ~ .container {
+    background-color: #f26666; }
+
 .container:nth-child(2):hover {
   background-color: red;
   box-shadow: 2px 5px 5px #888888;
