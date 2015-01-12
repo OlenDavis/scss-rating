@@ -3,7 +3,7 @@ module.exports = (grunt) ->
 	    sass: 
 	    	dist:
 	    		files:
-	    			"style.css" : "style.scss"
+	    			"style.css" : "scss/style.scss"
 
 		watch:
 			css:
@@ -13,7 +13,7 @@ module.exports = (grunt) ->
 		coffee:
 			compile:
 				files:
-					'main.js' : 'main.coffee'
+					'main.js' : 'coffee/main.coffee'
 
 	grunt.loadNpmTasks 'grunt-contrib-coffee'
 	grunt.loadNpmTasks 'grunt-contrib-sass'
