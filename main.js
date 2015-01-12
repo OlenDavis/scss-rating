@@ -11,15 +11,25 @@
 var option = document.getElementsByClassName("container");
 var heart = document.getElementById('heart');
 
-for (var i = 0; i < option.length; i++){
-	option[i].addEventListener("click", function(){
-		console.log(this);
-		this.classList.add("active");
-	});
+function addActive(elem){
+	console.log(option[elem]);
+	option[elem].classList.add("active");
+	//Recursion to add active class to all containers
+	if (option[elem+1] !== undefined){
+		addActive(elem+1);
+	}
 }
 
+for (var i = 0; i < option.length; i++){
+	//Closure to track index of container
+	(function(index){
+		option[index].addEventListener("click", function(){
+			addActive(index);
+		});
+	})(i);
+	option[i].addEventListener("click", function(){
+		// console.log(this);
+		this.classList.add("active");
+	});
 
-heart.addEventListener("click", function(){
-	console.log('clicked');
-	heart.classList.add("active");
-});
+}

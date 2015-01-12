@@ -1,4 +1,4 @@
-.container, .active {
+.container, .active, .active:first-child {
   height: 180px;
   width: 180px;
   border: 1px solid #e9e9e9;
@@ -15,6 +15,10 @@
   background-color: #1fb8ea; }
   .active ~ .container, .active ~ .active {
     background-color: #1fb8ea; }
+  .active .star:before {
+    border-bottom: 90px solid white; }
+  .active .star:after, .active .star {
+    border-bottom: 50px solid white; }
 
 .active:first-child {
   background-color: red;
@@ -32,9 +36,9 @@
 
 .container:hover ~ .container, .active:hover ~ .container, .container:hover ~ .active, .active:hover ~ .active {
   background-color: #ADD8E6; }
-  .container:hover ~ .container #star:before, .active:hover ~ .container #star:before, .container:hover ~ .active #star:before, .active:hover ~ .active #star:before {
+  .container:hover ~ .container .star:before, .active:hover ~ .container .star:before, .container:hover ~ .active .star:before, .active:hover ~ .active .star:before {
     border-bottom: 90px solid white; }
-  .container:hover ~ .container #star:after, .active:hover ~ .container #star:after, .container:hover ~ .active #star:after, .active:hover ~ .active #star:after, .container:hover ~ .container #star, .active:hover ~ .container #star, .container:hover ~ .active #star, .active:hover ~ .active #star {
+  .container:hover ~ .container .star:after, .active:hover ~ .container .star:after, .container:hover ~ .active .star:after, .active:hover ~ .active .star:after, .container:hover ~ .container .star, .active:hover ~ .container .star, .container:hover ~ .active .star, .active:hover ~ .active .star {
     border-bottom: 50px solid white; }
 
 #heart:hover .container, #heart:hover .active {
@@ -42,13 +46,12 @@
 
 .container:hover #heart:before, .active:hover #heart:before, .container:hover #heart:after, .active:hover #heart:after {
   background-color: white; }
-
-.container:hover #star:before, .active:hover #star:before {
+.container:hover .star:before, .active:hover .star:before {
   border-bottom: 90px solid white; }
-.container:hover #star:after, .active:hover #star:after, .container:hover #star, .active:hover #star {
+.container:hover .star:after, .active:hover .star:after, .container:hover .star, .active:hover .star {
   border-bottom: 50px solid white; }
 
-#star {
+.star {
   top: 10px;
   width: 0;
   height: 0;
@@ -64,7 +67,7 @@
   -ms-transform: rotate(35deg);
   -o-transform: rotate(35deg);
   transform: rotate(35deg); }
-  #star:before {
+  .star:before {
     height: 0;
     width: 0;
     position: absolute;
@@ -80,7 +83,7 @@
     -ms-transform: rotate(-35deg);
     -o-transform: rotate(-35deg);
     transform: rotate(-35deg); }
-  #star:after {
+  .star:after {
     content: '';
     width: 0;
     height: 0;
