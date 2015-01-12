@@ -1,4 +1,4 @@
-.container, .active, .active:first-child {
+.container, .active, .active:first-child, .container:first-child:hover {
   height: 180px;
   width: 180px;
   border: 1px solid #e9e9e9;
@@ -6,14 +6,14 @@
   display: inline-block;
   float: right;
   margin: 5px; }
-  .container:hover, .active:hover {
+  .container:hover, .active:hover, .container:hover:first-child {
     background-color: #1fb8ea;
     box-shadow: 2px 5px 5px #888888;
     border: 0px; }
 
 .active {
   background-color: #1fb8ea; }
-  .active ~ .container, .active ~ .active {
+  .active ~ .container, .active ~ .active, .active ~ .container:first-child:hover {
     background-color: #1fb8ea; }
   .active .star:before {
     border-bottom: 90px solid white; }
@@ -22,18 +22,11 @@
   .active #heart:before, .active #heart:after {
     background-color: white; }
 
-.active:first-child {
+.active:first-child, .container:first-child:hover, .active:first-child:hover {
   background-color: red;
   box-shadow: 2px 5px 5px #888888;
   border: 0px; }
-  .active:first-child ~ .container, .active:first-child ~ .active {
-    background-color: #f26666; }
-
-.container:first-child:hover, .active:first-child:hover {
-  background-color: red;
-  box-shadow: 2px 5px 5px #888888;
-  border: 0px; }
-  .container:first-child:hover ~ .container, .active:first-child:hover ~ .container, .container:first-child:hover ~ .active, .active:first-child:hover ~ .active {
+  .active:first-child ~ .container, .active:first-child ~ .active, .container:first-child:hover ~ .container, .active:first-child:hover ~ .container, .container:first-child:hover ~ .active, .active:first-child:hover ~ .active {
     background-color: #f26666; }
 
 .container:hover ~ .container, .active:hover ~ .container, .container:hover ~ .active, .active:hover ~ .active {
