@@ -2,6 +2,7 @@ $light-red: #f26666;
 $blue: #1fb8ea;
 $light-blue: #ADD8E6;
 $gray: #e9e9e9;
+$shadow: #888888;
 
 .container {
 	height: 180px;
@@ -19,7 +20,7 @@ $gray: #e9e9e9;
 }
 .canHover .container:hover {
 	background-color: $blue;
-	box-shadow: 2px 5px 5px #888888;
+	box-shadow: 2px 5px 5px $shadow;
 	border: 0px;		
 }
 //.active class in order to make rating selection
