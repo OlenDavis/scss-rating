@@ -2,7 +2,31 @@ $light-red: #f26666;
 $blue: #1fb8ea;
 $light-blue: #ADD8E6;
 $gray: #e9e9e9;
-$shadow: #888888;
+$shadow-color: #888888;
+
+
+@mixin transform($transform) {
+	-webkit-transform: $transform;
+	-moz-transform: $transform;
+	-ms-transform: $transform;
+	-o-transform: $transform;
+	transform: $transform;
+}
+@mixin transform-origin($origin) {
+	-webkit-transform-origin: $origin; 
+	-moz-transform-origin: $origin; 
+	-ms-transform-origin: $origin; 
+	-o-transform-origin: $origin; 
+	transform-origin :$origin;	
+}
+
+@mixin box-shadow($shadow) {
+	-webkit-box-shadow: $shadow;
+	-moz-box-shadow: $shadow;
+	-ms-box-shadow: $shadow;
+	-o-box-shadow: $shadow;
+	box-shadow: $shadow;
+}
 
 .container {
 	height: 180px;
@@ -20,7 +44,7 @@ $shadow: #888888;
 }
 .canHover .container:hover {
 	background-color: $blue;
-	box-shadow: 2px 5px 5px $shadow;
+	@include box-shadow(2px 5px 5px $shadow-color);
 	border: 0px;		
 }
 //.active class in order to make rating selection
@@ -78,21 +102,6 @@ $shadow: #888888;
 	}
 }
 
-
-@mixin transform($transform) {
-	-webkit-transform: $transform;
-	-moz-transform: $transform;
-	-ms-transform: $transform;
-	-o-transform: $transform;
-	transform: $transform;
-}
-@mixin transform-origin($origin) {
-	-webkit-transform-origin: $origin; 
-	-moz-transform-origin: $origin; 
-	-ms-transform-origin: $origin; 
-	-o-transform-origin: $origin; 
-	transform-origin :$origin;	
-}
 //Create star shape
 .star {
 	top: 10px;
