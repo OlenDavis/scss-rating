@@ -1,6 +1,5 @@
 var option = document.getElementsByClassName("container");
 var canHover = document.getElementsByClassName("canHover")[0];
-var noClick = true;
 
 function addActive(elem){
 	option[elem].classList.add("active");
