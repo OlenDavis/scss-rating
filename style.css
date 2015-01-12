@@ -27,7 +27,6 @@
 
 .active:first-child, .canHover .active:first-child:hover, .canHover .container:first-child:hover {
   background-color: red;
-  box-shadow: 2px 5px 5px #888888;
   border: 0px; }
   .active:first-child ~ .container, .active:first-child ~ .active, .canHover .active:first-child ~ .container:first-child:hover, .canHover .active:first-child:hover ~ .container, .canHover .container:first-child:hover ~ .container, .canHover .active:first-child:hover ~ .active, .canHover .container:first-child:hover ~ .active {
     background-color: #f26666; }

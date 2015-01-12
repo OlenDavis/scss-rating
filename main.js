@@ -5,7 +5,6 @@ function addActive(elem){
 	console.log(option[elem]);
 	option[elem].classList.add("active");
 	canHover.className="";
-	// option[elem].classList.remove("container");
 	//Recursion to add active class to all containers
 	if (option[elem+1] !== undefined){
 		addActive(elem+1);
