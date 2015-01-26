@@ -27,4 +27,8 @@
     i++;
   }
 
+  // You could have structured this where you only add/remove the canHover class to the parent (to
+  // enable/disable voting) and add the active class to only the selected rating. That said, this is
+  // fully fuctional; great job!
+
 }).call(this);
