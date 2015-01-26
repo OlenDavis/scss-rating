@@ -37,6 +37,7 @@ $shadow-color: #888888;
 	margin: 5px;
 }
 //Take out float for smaller window
+// 1. This destroys the effect; for smaller viewports you ought to be able to easily make the whole control smaller - hence why you should never use px sizing, but always em - this way, when you need to make something smaller, you can simply set a font-size: 80% (for instance) on the parent element, making all measurements consistently 80%, keeping the structure of everything intact.
 @media (max-width: 1170px){
 	.container {
 		clear:both;
@@ -49,16 +50,17 @@ $shadow-color: #888888;
 }
 //.active class in order to make rating selection
 .active {
-	@extend .container;
+	@extend .container; // 2. rather than extending, you can simply nest this style (and many others later) in .container like this:
+	// .container { &.active { ... } }
 	background-color: $blue;
 	& ~ .container{
 		background-color: $blue;
 	}
 	& .star:before {
-		border-bottom: 90px solid white
+		border-bottom: 90px solid white // 3. ought to have semicolon (and if you're really concerned about filesize let a CSS minifier remove unnecessary semicolons like this, not muddy up what should be consistent code) - this sort of inconsistency makes me concerned you were copy-pasting this from elsewhere, in which case you should provide a reference from where you copied it.
 	}
 	& .star:after, .star {
-		border-bottom: 50px solid white
+		border-bottom: 50px solid white // ditto 3.
 	}
 	& #heart:before, #heart:after {
 		background-color: white;
@@ -66,7 +68,8 @@ $shadow-color: #888888;
 }
 
 .active:first-child, .canHover .container:first-child:hover {
-	@extend .container;
+	@extend .container; // see note 2. you could have changed this CSS selector to &.active:first-child, .canHover &:first-child:hover. In fact, better yet, you could have written this:
+	// &:first-child { &.active, .canHover &:hover { ... } }
 	background-color: red;
 	border: 0px;
 	// Adds light red background to container
@@ -76,13 +79,13 @@ $shadow-color: #888888;
 }
 
 // Adds light blue background to container and white fill for star
-.canHover .container:hover ~ .container{
+.canHover .container:hover ~ .container{ // Great! That's the idea!
 	background-color: $light-blue;
 	& .star:before {
-		border-bottom: 90px solid white
+		border-bottom: 90px solid white // ditto 3.
 	}
 	& .star:after, .star {
-		border-bottom: 50px solid white
+		border-bottom: 50px solid white // ditto 3.
 	}
 }
 
@@ -103,6 +106,7 @@ $shadow-color: #888888;
 }
 
 //Create star shape
+// All of these dimensions are given in px, which is a huge no-no for flexibility; for instance, how on earth do you expect to be able to easily make this smaller? One option (even with using px) is to set a base px size as a variable and have all the sizes in each icon be some super-specific multiple of that; i.e. if the $base-value is 10px, then top below would be 1 * $base-value, while margin would be 5 * $base-value 0 * $base-value and so on.
 .star {
 	top: 10px;
     width: 0;
